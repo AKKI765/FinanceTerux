@@ -1,0 +1,318 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 9999; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+}
+.modal-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#confirmDelete {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+#cancelDelete {
+  background-color: #6c757d; /* Grey */
+  color: white;
+}
+
+#modalOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+#editModal {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: #fff;
+  padding: 30px 20px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+#editModal h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.save-btn, .cancel-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f0f0f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  gap: 30px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  overflow: hidden;
+}
+
+.card img {
+  width: 260px; 
+  height: 180px; 
+  object-fit: cover; 
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 20px; 
+  color: #333;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  max-width: 100%;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input, form textarea, form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+.todayExpenses{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.expenseTable {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.expenseTable {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+#transaction-table thead {
+  background-color: #f4f6f8;
+}
+
+#transaction-table th,
+#transaction-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+#transaction-table th {
+  font-weight: bold;
+  color: #333;
+}
+
+#transaction-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#transaction-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 6px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      padding: 20px;
+      margin: 20px auto;
+      gap: 20px;
+  }
+
+  .card {
+      width: 100%;
+  }
+
+  form {
+      max-width: 100%;
+  }
+  
+  .expenseTable{
+      padding: 10px;
+  }
+  
+  #transaction-table th,
+  #transaction-table td {
+      padding: 8px 10px;
+      font-size: 12px;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+      padding: 4px 8px;
+      font-size: 12px;
+  }
+}
+
+@media(max-width: 480px){
+  .card img {
+      width: 100%;
+      height: auto;
+  }
+  .modal-content{
+      width: 90%;
+      margin: 20% auto;
+  }
+  #editModal{
+      width: 90%;
+  }
+}

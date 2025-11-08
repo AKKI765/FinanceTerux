@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/history.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../logo.svg">
+    <title>History - FinanceTerux</title>
+</head>
+<body>
+    <div class="navbar-container"></div>
+
+
+    <div class="container">
+        <h1>"Track and Explore Your Financial History 📈"</h1>
+        <div class="mode-selector">
+            <div id="budgetCard" class="mode-card">
+              <img src="https://cdn.pixabay.com/photo/2019/07/02/05/52/money-4311572_1280.png" alt="Budget Icon">
+              <h2>Budget</h2>
+            </div>
+          
+            <div id="transactionCard" class="mode-card">
+              <img src="https://cdn.pixabay.com/photo/2021/06/30/12/23/card-6376665_1280.jpg" alt="Transaction Icon">
+              <h2>Transactions</h2>
+            </div>
+          </div>
+
+
+          <div id="spinner" class="spinner hidden">
+            <div class="spinner-inner"></div>
+          </div>
+  
+          <div class="searchHead hidden">
+  
+            <h2>Serach Your History</h2>
+  
+          </div>
+  
+              
+            <div id="searchArea" class="search-area hidden">
+              
+            </div>
+  
+        
+    
+        
+        </div>
+         
+
+
+      <div class="secContainer">
+
+       
+      
+        <div class="historyHead hidden">
+      </div>
+
+        
+  
+      <div class="table-card hidden" id="fullTable">
+        <div class="table-container">
+          <table id="historyTable">
+            <thead id="tableHead">
+              </thead>
+            <tbody id="tableBody">
+              </tbody>
+          </table>
+        </div>
+  
+        <div class="pagination hidden">
+          <button id="prevPage">Previous</button>
+          <span id="pageIndicator">Page 1 </span>
+          <button id="nextPage">Next</button>
+        </div>
+  
+        <div class="actions hidden">
+          <button id="resetBtn">Reset</button>
+          <button id="downloadPdfBtn">Download PDF</button>
+        </div>
+      </div>
+  
+    </div> 
+
+      
+
+    <div id="dynamic-footer"></div>
+
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/history.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="../js/footer.js"> </script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+}
+
+.navbar-container {
+    background: linear-gradient(135deg, #e5e5e5, #6aaec5, #3ba5d2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+#logoSvg {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.logo h2 {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1d0f0f;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff0000;
+}
+
+.auth-menu {
+    display: flex;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-buttons button {
+    width: auto;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.auth-buttons a {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.auth-buttons button.signup,
+.auth-buttons a.signup {
+    background-color: #007bff;
+    color: white;
+}
+
+.auth-buttons button.login,
+.auth-buttons a.login {
+    background-color: #28a745;
+    color: white;
+}
+
+.auth-buttons button#logout {
+    background-color: #dc3545;
+    color: white;
+}
+
+.auth-buttons button.admin img {
+    width: 25px;
+    height: 25px;
+}
+
+.auth-buttons button.admin {
+    background-color: transparent;
+}
+
+
+
+
+
+/* Hamburger Menu Styles */
+.hamburger,
+.close {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+.close {
+    display: none;
+}
+
+.nav-menu.active{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: white;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+}
+
+
+.auth-menu.active{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 180px;
+    right: 0;
+    background-color: white;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+}
+
+.nav-menu.active .nav-links,
+.auth-menu.active .auth-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-menu.active .nav-links li,
+.auth-menu.active .auth-buttons button,
+.auth-menu.active .auth-buttons a {
+    width: 100%;
+    text-align: left;
+    margin: 5px 0;
+    text-align: center;
+}
+
+
+.content {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: center; /* Center the cards horizontally */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px; /* Fixed width */
+    height: 350px; /* Fixed height */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 70%; 
+    object-fit: cover; 
+    border-bottom: 1px solid #eee;
+}
+
+.card h3 {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+}
+
+
+.add-card-form {
+    margin-bottom: 20px;
+}
+
+.add-card-form input {
+    padding: 8px;
+    margin-right: 8px;
+}
+
+.add-card-form button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.add-card-form button:hover {
+    background-color: #0056b3;
+}
+
+
+.delete-btn {
+    background-color: #e63946; /* Beautiful red */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d62828; /* Slightly darker red on hover */
+    transform: scale(1.05);
+  }
+  
+  .delete-btn:active {
+    transform: scale(0.95);
+  }
+
+
+
+
+  .add-card-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between input fields and button */
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: fit-content; /* Adjust width to content */
+}
+
+.add-card-form input[type="text"] {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 250px; /* Adjust as needed */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.add-card-form input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff; /* Highlight on focus */
+}
+
+.add-card-form button {
+    padding: 12px 20px;
+    background-color: #28a745; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-card-form button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+
+
+
+.message,.message1{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between input fields and button */
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: fit-content; /* Adjust width to content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .add-card-form {
+        flex-direction: column;
+        align-items: stretch;
+        width: 90%;
+        gap: 10px;
+    }
+
+    .add-card-form input[type="text"] {
+        width: 100%;
+    }
+
+    .add-card-form button {
+        width: 100%;
+    }
+}
+
+
+
+
+ 
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 768px) {
+    .nav-menu,
+    .auth-menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-links li a {
+        display: block; /* Ensure the link is visible */
+        
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .close {
+        display: none;
+    }
+
+    .nav-menu.active,
+    .auth-menu.active {
+        display: flex;
+    }
+
+    .hamburger.active {
+        display: none;
+    }
+
+    .close.active {
+        display: block;
+    }
+}
+
+
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 999;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .modal-buttons {
+    margin-top: 20px;
+  }
+  
+  .modal-buttons button {
+    margin: 0 10px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  #confirmDelete {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  #cancelDelete {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+
+
+

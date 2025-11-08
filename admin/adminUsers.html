@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../admin/admindashboard.css">
+    <link rel="stylesheet" href="../admin/adminuser.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../logo.svg">
+    <title>Users - Admin - FinanceTerux</title>
+</head>
+<body>
+
+
+  <div class="navbar-container">
+    <nav class="navbar">
+      <div class="logo">
+        <img id="logoSvg" src="../logo.svg" alt="My SVG Image">
+        <h2>FinanceTerux</h2>
+      </div>
+      <div class="nav-menu">
+        <ul class="nav-links">
+            <li><a href="../admin/admindashboard.html">Home</a></li>
+            <li><a href="../admin/adminUsers.html">Users</a></li>     
+            
+        </ul>
+      </div>
+      <div class="auth-menu">
+        <div class="auth-buttons">
+            <h3>Hello, Admin!!!</h3>
+           <button id="logout"><a href="../index.html" style="color: white; text-decoration: none; ">Logout</a></button>
+       </div>
+      </div>
+    </nav>  
+
+    <div class="ham">
+      <div class="hamburger">☰</div>
+      <div class="close">✖︎</div>
+    </div>
+    
+    
+  </div>
+
+    <div class="userDetails">
+        <h1>User Management</h1>
+      
+        <div class="stats-card">
+          <h2>Total Users: <span id="totalUsers">0</span></h2>
+          <h2>Active Users: <span id="activeUsers">0</span></h2>
+        </div>
+      
+        <!-- Search Input -->
+        <input type="text" id="searchInput" placeholder="Search by Email or User ID" />
+      
+        <!-- Users Table -->
+        <table id="usersTable">
+          <thead>
+            <tr>
+              <th>Serial No.</th>
+              <th>Email</th>
+              <th>User ID</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      
+        <!-- Pagination Controls -->
+        <div id="paginationControls">
+          <button id="prevPageBtn">Previous</button>
+          <span id="pageNumber">Page 1</span>
+          <button id="nextPageBtn">Next</button>
+        </div>
+      </div>
+
+      <!-- Dynamic Footer -->
+  <div id="dynamic-footer"></div>
+
+
+<script type="module" src="../admin/adminuser.js"></script>
+<script src="../js/footer.js"> </script>
+    
+</body>
+</html>

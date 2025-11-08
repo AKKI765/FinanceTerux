@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/setting.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../logo.svg">
+    <title>Profile Settings - FinanceTerux</title>
+</head>
+<body>
+    <div class="navbar-container"></div>
+
+
+
+    <div class="Setting">
+        <div class="card">
+            <div class="profile-pic">
+              <img id="profileImage" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture">
+              <!-- <input type="file" id="uploadImage" accept="image/*" style="display: none;">
+              <button id="uploadBtn">Change Picture</button> -->
+               <h2>Profile</h2>
+            </div>
+            
+            <div class="email" id="userEmail">Loading...</div>
+          
+            <div class="actions">
+              
+              <button id="deleteAccountBtn" class="btn danger">Delete Account</button>
+            </div>
+          
+            <div id="deleteModal" class="modal hidden">
+              <div class="modal-content">
+                <h2>Confirm Delete</h2>
+                <p>Enter your password to delete your account:</p>
+                <p style="color:red"><b>***Note***</b></p>
+                <p style="color:red">All Your Data Will Be Deleted Permanently.</p>
+                <input type="password" id="passwordInput" placeholder="Password">
+                <p id="inputMessage"></p>
+                <button id="confirmDeleteBtn" class="btn danger">Confirm Delete</button>
+                <button id="cancelDeleteBtn" class="btn">Cancel</button>
+                <p><a href="#" id="forgotPasswordLink">Forgot Password?</a></p>
+                <p id="forgotMessage"></p>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+
+    <div id="dynamic-footer"></div>
+
+
+
+
+
+   
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/setting.js"></script>
+    <script src="../js/footer.js"> </script>
+    
+</body>
+</html>

@@ -1,0 +1,422 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+}
+
+.navbar-container {
+    background: linear-gradient(135deg, #e5e5e5, #6aaec5, #3ba5d2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+#logoSvg {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.logo h2 {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1d0f0f;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff0000;
+}
+
+.auth-menu {
+    display: flex;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-buttons button {
+    width: auto;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.auth-buttons a {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.auth-buttons button.signup,
+.auth-buttons a.signup {
+    background-color: #007bff;
+    color: white;
+}
+
+.auth-buttons button.login,
+.auth-buttons a.login {
+    background-color: #28a745;
+    color: white;
+}
+
+.auth-buttons button#logout {
+    background-color: #dc3545;
+    color: white;
+}
+
+.auth-buttons button.admin img {
+    width: 25px;
+    height: 25px;
+}
+
+.auth-buttons button.admin {
+    background-color: transparent;
+}
+
+.content {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    background-color: #f4f7f6;
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Hamburger Menu Styles */
+.hamburger,
+.close {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+.close {
+    display: none;
+}
+
+.nav-menu.active{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: white;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+}
+
+
+.auth-menu.active{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 180px;
+    right: 0;
+    background-color: white;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+}
+
+.nav-menu.active .nav-links,
+.auth-menu.active .auth-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-menu.active .nav-links li,
+.auth-menu.active .auth-buttons button,
+.auth-menu.active .auth-buttons a {
+    width: 100%;
+    text-align: left;
+    margin: 5px 0;
+    text-align: center;
+}
+
+
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 768px) {
+    .nav-menu,
+    .auth-menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-links li a {
+        display: block; /* Ensure the link is visible */
+        
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .close {
+        display: none;
+    }
+
+    .nav-menu.active,
+    .auth-menu.active {
+        display: flex;
+    }
+
+    .hamburger.active {
+        display: none;
+    }
+
+    .close.active {
+        display: block;
+    }
+
+    
+}
+
+
+
+
+
+/* Container for the user details */
+.userDetails {
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px; /* Reduced font size */
+    color: #2c3e50;
+}
+
+/* Stats Card for Total and Active Users */
+.stats-card {
+    background: #fff;
+    padding: 15px; /* Reduced padding */
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats-card h2 {
+    font-size: 16px; /* Reduced font size */
+    color: #2980b9;
+}
+
+/* Search Input */
+#searchInput {
+    width: 100%;
+    padding: 10px; /* Reduced padding */
+    margin-bottom: 15px; /* Reduced margin */
+    font-size: 14px; /* Reduced font size */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    font-size: 12px; /* Reduced font size */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Reduced padding */
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Pagination Controls */
+#paginationControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Reduced gap */
+}
+
+#pageNumber {
+    font-size: 14px; /* Reduced font size */
+    color: #2980b9;
+}
+
+/* Buttons (Previous/Next) */
+button {
+    padding: 8px 15px; /* Reduced padding */
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px; /* Reduced font size */
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+/* Disabled Button Style */
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .userDetails {
+        width: 95%;
+        padding: 15px; /* Reduced padding */
+    }
+
+    .stats-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #paginationControls {
+        flex-direction: column;
+    }
+
+    #pageNumber {
+        margin: 10px 0;
+    }
+
+    /* Further reduction for smaller screens */
+    table {
+        font-size: 10px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+    .stats-card h2{
+        font-size: 14px;
+    }
+    #searchInput{
+        font-size: 12px;
+    }
+    button{
+        font-size: 12px;
+    }
+}
+
+
+

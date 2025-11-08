@@ -1,0 +1,276 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.budget-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  max-width: 400px;
+  min-width: 300px;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.card button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.card button:hover {
+  background-color: #45a049;
+}
+
+.buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+#deleteBudgetBtn {
+  background-color: #961818;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  text-align: center;
+}
+
+/* Heading */
+.modal-content h3 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: #333;
+}
+
+/* Input Field */
+#editBudgetInput {
+  width: 90%;
+  padding: 10px 12px;
+  font-size: 15px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#editBudgetInput:focus {
+  border-color: #4CAF50;
+}
+
+/* Buttons Wrapper */
+.modal-content button {
+  padding: 6px 14px;
+  margin: 6px 6px 0 6px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Save Button */
+#saveEditBtn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#saveEditBtn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Cancel Button */
+#closeModalBtn {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+#closeModalBtn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content.small {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#confirmDeleteBtn,
+#cancelDeleteBtn {
+  padding: 6px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#confirmDeleteBtn.danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#cancelDeleteBtn.cancel {
+  background-color: #ccc;
+  color: #333;
+}
+
+.budget-table-container {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.budget-table-container {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px;
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#budgetTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+#budgetTable thead {
+  background-color: #f4f6f8; /* Light grey background for header */
+}
+
+#budgetTable th,
+#budgetTable td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+#budgetTable th {
+  font-weight: bold;
+  color: #333; /* Dark grey text for header */
+}
+
+#budgetTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light grey for even rows */
+}
+
+#budgetTable tbody tr:hover {
+  background-color: #f1f1f1; /* Slightly darker grey on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .budget-container {
+      padding: 1rem;
+      gap: 1rem;
+  }
+
+  .card {
+      padding: 1.5rem;
+      min-width: 100%;
+  }
+
+  .modal-content {
+      width: 90%;
+      margin: 10% auto;
+  }
+  
+  .budget-table-container {
+      padding: 10px;
+  }
+  
+  #budgetTable th,
+  #budgetTable td {
+      padding: 8px 10px;
+      font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      padding: 1rem;
+  }
+  .modal-content.small{
+      width: 90%;
+  }
+}

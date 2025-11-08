@@ -1,0 +1,68 @@
+/* General page styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in elements' total width and height */
+}
+
+/* Footer styles */
+footer {
+  background: linear-gradient(135deg, #0f2027, #0d242c, #072938);
+  color: white;
+  text-align: center;
+  padding: 30px 15px 20px;
+  font-size: 14px;
+  width: 100%; /* Ensure full width */
+}
+
+footer .footer-links,
+footer .social-icons {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffd700; /* Gold hover */
+}
+
+.social-icons a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+footer .copyright {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Ensure the body takes up at least the full viewport height */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure the main content takes up remaining space */
+main {
+  flex: 1;
+}
+
+/* Ensure footer is always at the bottom */
+footer {
+  margin-top: auto; /* Push the footer to the bottom */
+}

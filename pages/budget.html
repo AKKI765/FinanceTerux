@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/budget.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="../logo.svg">
+    <title>Budget - FinanceTerux</title>
+</head>
+<body>
+
+    <div class="navbar-container"></div>
+
+    <div class="budget-container">
+
+        <!-- Budget Form -->
+        <div class="card" id="budgetFormCard">
+          <h2 id="addBudgetHeading"></h2>
+          <form id="budgetForm">
+            <input type="number" id="budgetAmount" placeholder="Enter Budget Amount" required>
+            <input type="text" id="monthYear" disabled>
+            <button type="submit" id="addBudgetBtn">Add Budget</button>
+            <p id="budgetMessage" class="hidden">You already entered your budget for this month!</p>
+            <div class="showAddMessage" id="showAddMessage"></div>
+          </form>
+        </div>
+      
+        <!-- Budget Info -->
+        <div class="card" id="budgetInfoCard" style="display: none;">
+          <h2 id="budgetDetailHeading">Budget Details</h2>
+          <p><strong>Budget:</strong> ₹<span id="budgetValue">0</span></p>
+          <p><strong>Total Expenses:</strong> ₹<span id="totalExpenses">0</span></p>
+          <p><strong>Remaining Budget:</strong> ₹<span id="remainingBudget">0</span></p>
+      
+          <div class="buttons">
+            <button id="editBudgetBtn">Edit</button>
+            <button id="deleteBudgetBtn">Delete</button>
+          </div>
+        </div>
+
+        
+      
+      </div>
+
+      <div class="budget-table-container">
+        <table id="budgetTable">
+          <thead>
+            <tr>
+              <th>Serial No.</th>
+              <th>Month & Year</th>
+              <th>Budget</th>
+              <th>Total Expenses</th>
+              <th>Remaining Budget</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data will be filled dynamically -->
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Edit Modal -->
+      <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+          <h3>Edit Budget</h3>
+          <input type="number" id="editBudgetInput" placeholder="Enter New Budget Amount">
+          <button id="saveEditBtn">Save</button>
+          <button id="closeModalBtn">Cancel</button>
+        </div>
+      </div>
+
+      <div id="deleteModal" class="modal hidden">
+        <div class="modal-content small">
+          <h3>Are you sure you want to delete?</h3>
+          <div class="modal-buttons">
+            <button id="confirmDeleteBtn" class="danger">Delete</button>
+            <button id="cancelDeleteBtn" class="cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+
+
+    <div id="dynamic-footer"></div>
+
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/budget.js"></script>
+    <script src="../js/footer.js"> </script>
+</body>
+</html>
