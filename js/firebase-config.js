@@ -10,7 +10,7 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.1/firebase
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCorLoNCuocFm7y3si5GM_TkhKFOWDd--U",
+  apiKey: "Enter Your Own Firebase API Key",
   authDomain: "personalfinancetracker-63375.firebaseapp.com",
   projectId: "personalfinancetracker-63375",
   storageBucket: "personalfinancetracker-63375.firebasestorage.app",
